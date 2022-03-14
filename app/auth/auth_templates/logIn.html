@@ -1,5 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Log In Page</h1>
+<div class="login-signup">
+    <h1 id="sign-in">Sign-In</h1>
+    <form class="loginform" action="#">
+        <label class="labeltext" for="email">Email(phone for mobile accounts)</label><br><br>
+        <input class="input" type="email" id="email" name="email"><br><br>
+        <label class="labeltext" for="password">Password</label><br><br>
+        <input class="input"type="password" id="password" name="password"><br><br>
+        <center><a href="#" class="forgotpass">Forgot Password?</a></center><br>
+        <input class="input" type="submit" value="Sign-In">
+        <p class="agreement">By continuing, you agree to Amazon's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.</p><br>
+        <label for="checkbox" style="float:right; padding-right: 320px;">Keep me signed in.</label>
+        <input type="checkbox" id="checkbox" name="keepsignedin">
+    </form><br>
+    <center><h3><span>New to Amazon?</span></h3></center><br>
+    <form action="signUp.html">
+        <center><input class="create" type="button" value="Create your Amazon Account"></center>
+    </form>
+</div>
 {% endblock content %}

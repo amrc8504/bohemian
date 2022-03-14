@@ -8,7 +8,3 @@ def home():
 @app.route('/about')
 def aboutPage():
     return render_template('about.html')
-
-@app.route('/browse')
-def browse():
-    return render_template('browse.html')

@@ -1,4 +1,6 @@
 from flask import Blueprint, render_template
+from .forms import UserCreationForm
+from app.models import User
 
 auth = Blueprint('auth', __name__, template_folder='auth_templates')
 
@@ -8,4 +10,5 @@ def signUp():
 
 @auth.route('/logIn')
 def logIn():
-    return render_template('logIn.html')
+    form = UserCreationForm()
+    return render_template('logIn.html', form=form)
