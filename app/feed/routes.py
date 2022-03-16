@@ -4,4 +4,4 @@ feed = Blueprint('feed', __name__, template_folder='feed_templates')
 
 @feed.route('/browse')
 def browse():
-    return render_template('browse.html')
+    return render_template('browse.html', feed=feed)

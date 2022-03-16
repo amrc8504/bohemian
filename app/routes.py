@@ -8,3 +8,8 @@ def home():
 @app.route('/about')
 def aboutPage():
     return render_template('about.html')
+
+@app.route('/api/v2/pokemon/')
+def pokedex():
+    
+    return {'hi' : "there"}

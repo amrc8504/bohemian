@@ -4,11 +4,13 @@ from .auth.routes import auth
 from .feed.routes import feed
 from .models import db
 from flask_migrate import Migrate
+from .pokemon.routes import pokemon
 
 app = Flask(__name__)
 
 app.register_blueprint(auth)
 app.register_blueprint(feed)
+app.register_blueprint(pokemon)
 
 app.config.from_object(Config)
 
