@@ -1,19 +1,62 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<div class="login-signup">
-    <h1 id="sign-in">Create your account</h1>
-    <form class="loginform" action="#">
-        <label class="labeltext" for="email">Email(phone for mobile accounts)</label><br><br>
-        <input class="input" type="email" id="email" name="email"><br><br>
-        <label class="labeltext" for="password">Password</label><br><br>
-        <input class="input"type="password" id="password" name="password"><br><br>
-        <center><a href="#" class="forgotpass">Forgot Password?</a></center><br>
-        <input class="input" type="submit" value="Create Account">
-        <p class="agreement">By continuing, you agree to Pokedex's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.</p><br>
-        <label for="checkbox" style="float:right; padding-right: 320px;">Keep me signed in.</label>
-        <input type="checkbox" id="checkbox" name="keepsignedin">
-    </form><br>
+{% block content %}<br>
+<div class="container w-50">
+    <form method="POST" action="">
+        {{form.hidden_tag()}}
+
+        <fieldset>
+            <legend class="border-bottom mb-4">Sign Up</legend>
+            <div class="form-group">
+                {{form.username.label(class="form-control-label")}}
+                {%if form.username.errors%}
+                {{form.username(class="form-control form-control-lg is-invalid")}}
+                {%for error in form.username.errors%}
+                <span>{{error}}</span>
+                {%endfor%}
+                {%else%}
+                {{form.username(class="form-control form-control-lg", placeholder="Artiscool2001")}}
+                {%endif%}
+            </div>
+            <div class="form-group">
+                {{form.email.label(class="form-control-label")}}
+                {%if form.email.errors%}
+                {{form.email(class="form-control form-control-lg is-invalid")}}
+                {%for error in form.email.errors%}
+                <span>{{error}}</span>
+                {%endfor%}
+                {%else%}
+                {{form.email(class="form-control form-control-lg", placeholder="Artist@Art.com")}}
+                {%endif%}
+            </div>
+            <div class="form-group">
+                {{form.password.label(class="form-control-label")}}
+                {%if form.password.errors%}
+                {{form.password(class="form-control form-control-lg is-invalid")}}
+                {%for error in form.password.errors%}
+                <span>{{error}}</span>
+                {%endfor%}
+                {%else%}
+                {{form.password(class="form-control form-control-lg", placeholder="4R+1$FuN")}}
+                {%endif%}
+            </div>
+            <div class="form-group">
+                {{form.confirm_password.label(class="form-control-label")}}
+                {%if form.confirm_password.errors%}
+                {{form.confirm_password(class="form-control form-control-lg is-invalid")}}
+                {%for error in form.confirm_password.errors%}
+                <span>{{error}}</span>
+                {%endfor%}
+                {%else%}
+                {{form.confirm_password(class="form-control form-control-lg", placeholder="4R+1$FuN")}}
+                {%endif%}
+            </div>
+
+        </fieldset><br>
+        <div class="field-group">
+            {{form.submit(class='btn btn-danger')}}
+        </div>
+    </form>
 </div>
 
 {% endblock content %}

@@ -1,5 +1,42 @@
-{% extends 'base.html' %}
+{% extends 'base.html'%}
 
 {% block content %}
-    <h1>This is the home page</h1>
+<center>
+    <h1 class="myH1">Let your imagination run wild.</h1>
+    <!-- Slideshow container -->
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides">
+      <div class="numbertext">1 / 3</div>
+      <img src="{{url_for('static', filename='media/img1.jpg')}}" style="width:100%">
+      <div class="text">'Kiss' - Magritte</div>
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">2 / 3</div>
+      <img src="{{url_for('static', filename='media/img2.jpg')}}" style="width:100%">
+      <div class="text">'How Dreams Are Made' - Holly Van Hart</div>
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">3 / 3</div>
+      <img src="{{url_for('static', filename='media/img3.jpg')}}" style="width:100%">
+      <div class="text">'Railroad Tracks' - Oscar Bluemner</div>
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat distinctio illum accusantium repellat totam harum sit fuga, officiis voluptatum ut, illo iste cupiditate aspernatur id? Ducimus unde perspiciatis nihil? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, nemo possimus exercitationem aperiam voluptatum sint, excepturi obcaecati deserunt enim placeat, consectetur blanditiis maxime qui alias aliquid consequuntur tempore ipsa voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis saepe rerum commodi. Nam id amet porro accusantium quaerat, veritatis perspiciatis ab doloremque explicabo enim impedit non ut laborum velit asperiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam repudiandae fugit est? Possimus, amet? Distinctio atque sequi harum doloremque molestias obcaecati beatae quod ratione ullam, vero nobis doloribus accusamus nam?</p>
+</center>
 {% endblock content %}

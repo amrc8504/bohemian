@@ -2,7 +2,7 @@ from flask import Flask
 from config import Config
 from .auth.routes import auth
 from .feed.routes import feed
-from .models import db
+from app.models import db
 from flask_migrate import Migrate
 from .pokemon.routes import pokemon
 
